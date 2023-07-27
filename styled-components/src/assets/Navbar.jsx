@@ -15,8 +15,10 @@ li{
   flex-direction : column;
   background: blue;
   position: fixed;
+  transition : all 0.3s linear;
+  transform : ${props => props.open ? "translateX(0)" : "translateX(100%)"};
   top : 0;
-  left : 0;
+  right : 0;
   height : 100vh;
   width : 300px;
   padding-top : 3.5rem;
@@ -26,9 +28,9 @@ li{
 }
 `;
 
-const Navbar = () => {
+const Navbar = ({open}) => {
   return (
-    <Ul>
+    <Ul open={open}>
       <li>Home Page</li>
       <li>About Us</li>
       <li>Product</li>
